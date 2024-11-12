@@ -7,6 +7,7 @@ Navigate to <https://tasb.github.io/terraform-full/> to have access to a HTML ve
 ## Contents
 
 - [Slides](#slides)
+- [Demos](#demos)
 - [Labs](#labs)
 - [Feedback](#feedback)
   
@@ -14,15 +15,12 @@ Navigate to <https://tasb.github.io/terraform-full/> to have access to a HTML ve
 
 The slides used during the sessions are available on the `slides` folder.
 
-- Introduction to Iac and Terraform
-- Main Terraform concepts
-- Create your first infra
-- Manage Terraform state
-- Manage Terraform Inputs and Outputs
-- Terraform and cloud providers
-- Terraform Modules
-- Terraform Backend
-- Collaborate with Terraform
+- [Introduction to Iac and Terraform](./slides/01.Introduction.pdf)
+- [Main Terraform concepts](./slides/02.MainConcepts.pdf)
+
+## Demos
+
+- [Intro to Terraform](./demos/session01/instructions.md)
 
 ## Labs
 
