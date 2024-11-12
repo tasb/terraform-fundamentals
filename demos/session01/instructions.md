@@ -1,5 +1,16 @@
 # Demo - Your first Terraform commands
 
+## Table of Contents
+
+- [Step 01: Check Terraform Code](#step-01-check-terraform-code)
+- [Step 02: Terraform init](#step-02-terraform-init)
+- [Step 03: Terraform plan](#step-03-terraform-plan)
+- [Step 04: Terraform apply](#step-04-terraform-apply)
+- [Step 05: Run terraform plan again](#step-05-run-terraform-plan-again)
+- [Step 06: Run terraform apply again](#step-06-run-terraform-apply-again)
+- [Step 07: Authentication](#step-07-authentication)
+- [Step 08: Show idempotence](#step-08-show-idempotence)
+
 ## Step 01: Check Terraform Code
 
 - Open `main.tf` file
@@ -31,19 +42,13 @@
 ## Step 06: Run terraform apply again
 
 - Run `terraform apply myplan` command
-- Check you still need to enter `yes` to proceed
 
-## Step 07: Run terraform apply with auto-approve
-
-- Run `terraform apply myplan -auto-approve` command
-- Now the repo is created and you can show on GitHub website
-
-## Step 08: Authentication
+## Step 07: Authentication
 
 - Explain that in this case we are using the integration with GitHub CLI
 - Run `gh auth login` to update the token
 
-## Step 09: Show idempotence
+## Step 08: Show idempotence
 
 - Run `terraform apply myplan` command again
 - Check that you don't have any change to be applied

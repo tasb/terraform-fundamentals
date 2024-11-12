@@ -21,6 +21,7 @@ The slides used during the sessions are available on the `slides` folder.
 ## Demos
 
 - [Intro to Terraform](./demos/session01/instructions.md)
+- [Organize code and use CLI](./demos/session02/instructions.md)
 
 ## Labs
 
