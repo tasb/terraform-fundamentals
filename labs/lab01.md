@@ -13,6 +13,10 @@
   - [Step 09: Login to GitHub](#step-09-login-to-github)
   - [Step 10: Plan again the changes](#step-10-plan-again-the-changes)
   - [Step 11: Apply the changes](#step-11-apply-the-changes)
+  - [Step 12: Terraform State](#step-12-terraform-state)
+  - [Step 13: Destroy the resource](#step-13-destroy-the-resource)
+  - [Step 14: Re-authenticate on GitHub](#step-14-re-authenticate-on-github)
+  - [Step 15: Run Destroy command again](#step-15-run-destroy-command-again)
 
 ## Objectives
 
@@ -324,7 +328,7 @@ Terraform will perform the following actions:
       + id                          = (known after apply)
       + merge_commit_message        = "PR_TITLE"
       + merge_commit_title          = "MERGE_MESSAGE"
-      + name                        = "my-terraform-repo"
+      + name                        = "terraform-training-labs"
       + node_id                     = (known after apply)
       + primary_language            = (known after apply)
       + private                     = (known after apply)
@@ -386,7 +390,7 @@ You should see the output:
 
 ```bash
 github_repository.example_repo: Creating...
-github_repository.example_repo: Creation complete after 1s [id=your_user/my-terraform-repo]
+github_repository.example_repo: Creation complete after 1s [id=your_user/terraform-training-labs]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
@@ -394,3 +398,175 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 Now you can check your GitHub account to see the new repository created.
 
 Congratulations! You have created your first Terraform resource!
+
+### Step 12: Terraform State
+
+Terraform keeps track of the resources it creates in a file called `terraform.tfstate`. This file is created in the same directory where you run the Terraform commands.
+
+You can see the content of this file by running the following command:
+
+```bash
+cat terraform.tfstate
+```
+
+This file is in JSON format and contains all the details about the resources created by Terraform.
+
+### Step 13: Destroy the resource
+
+To destroy the resource created, run the following command:
+
+```bash
+terraform destroy
+```
+
+You should see the output:
+
+```bash
+github_repository.example_repo: Refreshing state... [id=terraform-training-labs]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # github_repository.example_repo will be destroyed
+  - resource "github_repository" "example_repo" {
+      - allow_auto_merge            = false -> null
+      - allow_merge_commit          = true -> null
+      - allow_rebase_merge          = true -> null
+      - allow_squash_merge          = true -> null
+      - allow_update_branch         = false -> null
+      - archived                    = false -> null
+      - default_branch              = "main" -> null
+      - delete_branch_on_merge      = false -> null
+      - description                 = "A repository created using Terraform" -> null
+      - etag                        = "W/\"7a42b9703f86ba83298c76205cfa43c1054ed1a17e4d13c20611d506b8e0aee5\"" -> null
+      - full_name                   = "tasb/terraform-training-labs" -> null
+      - git_clone_url               = "git://github.com/tasb/terraform-training-labs.git" -> null
+      - has_discussions             = false -> null
+      - has_downloads               = false -> null
+      - has_issues                  = true -> null
+      - has_projects                = false -> null
+      - has_wiki                    = true -> null
+      - html_url                    = "https://github.com/tasb/terraform-training-labs" -> null
+      - http_clone_url              = "https://github.com/tasb/terraform-training-labs.git" -> null
+      - id                          = "terraform-training-labs" -> null
+      - is_template                 = false -> null
+      - merge_commit_message        = "PR_TITLE" -> null
+      - merge_commit_title          = "MERGE_MESSAGE" -> null
+      - name                        = "terraform-training-labs" -> null
+      - node_id                     = "R_kgDONPFk7g" -> null
+      - private                     = false -> null
+      - repo_id                     = 888235246 -> null
+      - squash_merge_commit_message = "COMMIT_MESSAGES" -> null
+      - squash_merge_commit_title   = "COMMIT_OR_PR_TITLE" -> null
+      - ssh_clone_url               = "git@github.com:tasb/terraform-training-labs.git" -> null
+      - svn_url                     = "https://github.com/tasb/terraform-training-labs" -> null
+      - topics                      = [] -> null
+      - visibility                  = "public" -> null
+      - vulnerability_alerts        = true -> null
+      - web_commit_signoff_required = false -> null
+        # (2 unchanged attributes hidden)
+
+      - security_and_analysis {
+          - secret_scanning {
+              - status = "enabled" -> null
+            }
+          - secret_scanning_push_protection {
+              - status = "enabled" -> null
+            }
+        }
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value:
+```
+
+To proceed with the destruction, type `yes` and press Enter.
+
+But you will get an error message:
+
+```bash
+github_repository.example_repo: Destroying... [id=terraform-training-labs]
+╷
+│ Error: DELETE https://api.github.com/repos/tasb/terraform-training-labs: 403 Must have admin rights to Repository. []
+│
+│
+╵
+```
+
+This happened because the token used to authenticate with GitHub doesn't have the necessary permissions to delete the repository.
+
+### Step 14: Re-authenticate on GitHub
+
+To grant the necessary permissions to delete the repository, run the following command:
+
+```bash
+gh auth login --scopes delete_repo
+```
+
+You need to authenticate again and grant the necessary permissions. You must follow the same steps as before.
+
+After you can validate your authentication status:
+
+```bash
+gh auth status
+```
+
+You should see the output:
+
+```bash
+github.com
+  ✓ Logged in to github.com as your_user
+  ✓ Git operations for github.com configured to use https protocol.
+  ✓ Token: gho_************************************
+  ✓ Token scopes: delete_repo, gist, read:org, repo, workflow
+```
+
+We have done this step for you to understand that Terraform is always dependent from authentication and authorization processes from the provider you are using.
+
+### Step 15: Run Destroy command again
+
+Now that you have the necessary permissions, run the `terraform destroy` command again:
+
+```bash
+terraform destroy
+```
+
+You need to confirm the destruction by typing `yes` and pressing Enter.
+
+You should see the output:
+
+```bash
+github_repository.example_repo: Destroying... [id=terraform-training-labs]
+github_repository.example_repo: Destruction complete after 1s
+```
+
+Now you can check your GitHub account to see that the repository was deleted.
+
+Let's check the content of the `terraform.tfstate` file again:
+
+```bash
+cat terraform.tfstate
+```
+
+The content of this file is now like this:
+
+```json
+{
+  "version": 4,
+  "terraform_version": "1.9.6",
+  "serial": 3,
+  "lineage": "14902e54-9086-9508-6aa6-b23b06e12e81",
+  "outputs": {},
+  "resources": [],
+  "check_results": null
+}
+```
+
+Congratulations! You have completed your first Terraform lab!
