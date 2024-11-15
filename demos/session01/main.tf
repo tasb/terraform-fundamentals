@@ -12,7 +12,7 @@ provider "github" {}
 
 # Create a GitHub Repository
 resource "github_repository" "example_repo" {
-  name        = "my-terraform-repo"
+  name        = "my-terraform-repo-20241114"
   description = "A repository created using Terraform"
   visibility  = "public" # Use "private" for a private repository
 

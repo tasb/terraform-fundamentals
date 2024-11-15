@@ -25,6 +25,8 @@ The slides used during the sessions are available on the `slides` folder.
 
 ## Labs
 
+- [Lab 01 - Run your first Terraform commands](./labs/lab01.md)
+
 ## Feedback
 
 For any feedback open up an issue describing what you have found and I'll return to you!
