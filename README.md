@@ -17,11 +17,12 @@ The slides used during the sessions are available on the `slides` folder.
 
 - [Introduction to Iac and Terraform](./slides/01.Introduction.pdf)
 - [Main Terraform concepts](./slides/02.MainConcepts.pdf)
+- [Variables and Outputs](./slides/03.Variables.pdf)
 
 ## Demos
 
-- [Intro to Terraform](./demos/session01/instructions.md)
-- [Organize code and use CLI](./demos/session02/instructions.md)
+- [Intro to Terraform](./demos/demo01/instructions.md)
+- [Organize code and use CLI](./demos/demo02/instructions.md)
 
 ## Labs
 
