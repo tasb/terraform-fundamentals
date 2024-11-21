@@ -43,8 +43,8 @@ variable "repo_name" {
   type        = string
   default     = "terraform-repo"
   validation {
-    condition     = length(var.repo_name) <= 100
-    error_message = "The repository name must be less than or equal to 100 characters"
+    condition     = length(var.repo_name) <= 20
+    error_message = "The repository name must be less than or equal to 20 characters"
   }
 }
 

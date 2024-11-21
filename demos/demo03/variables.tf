@@ -12,8 +12,8 @@ variable "priority_labels" {
   type        = number
   default     = 3
   validation {
-    condition     = var.priority_labels >= 0 && var.priority_labels <= 5
-    error_message = "The number of priority labels must be between 1 and 5. If set to 0, no priority labels will be created."
+    condition     = var.priority_labels >= 1 && var.priority_labels <= 5
+    error_message = "The number of priority labels must be between 1 and 5"
   }
 }
 
