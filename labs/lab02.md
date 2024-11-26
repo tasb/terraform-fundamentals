@@ -1,5 +1,29 @@
 # Lab 02 - Organize and add variables to your Terraform code
 
+## Table of Contents
+
+- [Goals](#goals)
+- [Prerequisites](#prerequisites)
+- [Guide](#guide)
+  - [Step 01: Organize your code](#step-01-organize-your-code)
+  - [Step 02: Add variables](#step-02-add-variables)
+  - [Step 03: Use variables in the code](#step-03-use-variables-in-the-code)
+  - [Step 04: Add outputs](#step-04-add-outputs)
+  - [Step 05: Run the code](#step-05-run-the-code)
+  - [Step 06: Change the `welcome_message` variable](#step-06-change-the-welcome_message-variable)
+  - [Step 07: Use tfvars files](#step-07-use-tfvars-files)
+  - [Step 08: Fix the error](#step-08-fix-the-error)
+  - [Step 09: Apply the changes](#step-09-apply-the-changes)
+- [Conclusion](#conclusion)
+
+## Goals
+
+- Organize your Terraform code
+- Add variables to your Terraform code
+- Use variables in your Terraform code
+- Add outputs to your Terraform code
+- Use tfvars files to store variables values
+
 ## Prerequisites
 
 - Have finished [Lab 01](../lab01/README.md)
@@ -212,3 +236,7 @@ After you execute the command, you should see a tfstate file created in the dire
 Please keep that file because you'll need to use it in the next lab.
 
 Congratulations, you have finished Lab 02! Now you can use variables and outputs in your Terraform code.
+
+## Conclusion
+
+Congratulations on finishing Lab 02! Now you can organize your Terraform code, add variables, and use outputs in your Terraform code.
