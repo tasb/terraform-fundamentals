@@ -22,7 +22,7 @@
 
 ## Pre-requisites
 
-- Have finished [Lab 03](../lab03/README.md)
+- Have finished [Lab 03](lab03.md)
 
 ## Guide
 

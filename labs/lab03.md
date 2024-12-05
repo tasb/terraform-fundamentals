@@ -22,7 +22,7 @@
 
 ## Pre-requisites
 
-- Have finished [Lab 02](../lab02/README.md)
+- Have finished [Lab 02](lab02.md)
 - Install [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 
 ## Guide

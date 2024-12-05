@@ -26,7 +26,7 @@
 
 ## Prerequisites
 
-- Have finished [Lab 01](../lab01/README.md)
+- Have finished [Lab 01](lab01.md)
 - Create a new folder or remove any tfstate file from the previous lab
 
 ## Guide
