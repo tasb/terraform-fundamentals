@@ -1,5 +1,23 @@
 # Lab 05 - Import resources
 
+## Table of Contents
+
+- [Learning Objectives](#learning-objectives)
+- [Pre-requisites](#pre-requisites)
+- [Guide](#guide)
+  - [Step 01: Create the Key Vault manually](#step-01-create-the-key-vault-manually)
+  - [Step 02: Import the Key Vault](#step-02-import-the-key-vault)
+  - [Step 03: Add a secret to the Azure Key Vault](#step-03-add-a-secret-to-the-azure-key-vault)
+  - [Step 04: Add the permission to write on the Key Vault](#step-04-add-the-permission-to-write-on-the-key-vault)
+- [Conclusion](#conclusion)
+
+## Learning Objectives
+
+- Learn how to import resources in Terraform
+- Learn how to use the `azurerm_client_config` data source
+- Learn how to use the `azurerm_role_assignment` resource
+- Learn how to use the `depends_on` argument
+
 ## Pre-requisites
 
 - Have finished [Lab 04](lab04.md)
