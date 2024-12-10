@@ -69,7 +69,7 @@ resource "azurerm_linux_web_app" "front_app" {
   }
 }
 
-resource "azurerm_linux_web_app" "example" {
+resource "azurerm_linux_web_app" "back_api" {
   name                = local.app_service_back_name
   resource_group_name = azurerm_resource_group.rg-app.name
   location            = azurerm_resource_group.rg-app.location
