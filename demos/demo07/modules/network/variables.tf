@@ -17,7 +17,7 @@ variable "resource_group_name" {
 
 variable "subnets" {
   description = "A map of subnets to create."
-  type        = map(object({
+  type        = list(object({
     name = string
     cidr = string
   }))

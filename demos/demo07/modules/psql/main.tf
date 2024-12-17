@@ -4,7 +4,7 @@ resource "azurerm_postgresql_flexible_server" "db" {
   location               = var.location
   administrator_login    = var.admin_user
   administrator_password = var.admin_password
-  version                = var.version
+  version                = var.psql_version
   zone                   = var.zone
   storage_mb             = var.storage_mb
   sku_name               = var.sku_name

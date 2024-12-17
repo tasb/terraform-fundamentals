@@ -40,14 +40,14 @@ module "network" {
   name                = local.vnet_name
   address_space       = [var.vnet_cidr]
   location            = var.location
-  resource_group_name = module.resource_group_network.id
+  resource_group_name = module.resource_group_network.name
   subnets             = var.subnets
 }
 
 module "app_service" {
   source              = "./modules/app_service"
   plan_name           = local.app_service_plan_name
-  resource_group_name = module.resource_group_app.id
+  resource_group_name = module.resource_group_app.name
   location            = var.location
   sku_name            = "B1"
   web_apps = {
@@ -63,13 +63,13 @@ module "app_service" {
 }
 
 module "database" {
-  source              = "./modules/database"
+  source              = "./modules/psql"
   name                = local.db_server_name
-  resource_group_name = module.resource_group_db.id
+  resource_group_name = module.resource_group_db.name
   location            = var.location
   admin_user          = local.db_admin_user
   admin_password      = var.db_password
-  version             = "14"
+  psql_version        = "14"
   zone                = "1"
   storage_mb          = 32768
   sku_name            = "B_Standard_B1ms"

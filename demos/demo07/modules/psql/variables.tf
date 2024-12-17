@@ -19,7 +19,7 @@ variable "admin_password" {
   sensitive   = true
 }
 
-variable "version" {
+variable "psql_version" {
   description = "The PostgreSQL version."
 }
 

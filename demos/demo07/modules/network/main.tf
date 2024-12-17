@@ -6,7 +6,7 @@ resource "azurerm_virtual_network" "vnet" {
 }
 
 resource "azurerm_subnet" "subnets" {
-  for_each = var.subnets
+  for_each = { for subnet in var.subnets : subnet.name => subnet }
 
   name                 = each.value.name
   address_prefixes     = [each.value.cidr]
