@@ -22,6 +22,7 @@ The slides used during the sessions are available on the `slides` folder.
 - [Terraform Backend](./slides/05.Backends.pdf)
 - [Azure Provider](./slides/06.AzureProvider.pdf)
 - [Terraform Modules](./slides/07.Modules.pdf)
+- [Terraform in CI/CD](./slides/08.CICD.pdf)
 
 ## Demos
 
@@ -32,6 +33,7 @@ The slides used during the sessions are available on the `slides` folder.
 - [Import resources](./demos/demo05/instructions.md)
 - [Create Infra in Azure with Terraform](./demos/demo06/instructions.md)
 - [Use Terraform Modules](./demos/demo07/instructions.md)
+- [Run Checkov on the Terraform code](./demos/demo08/instructions.md)
 
 ## Labs
 
@@ -41,6 +43,8 @@ The slides used during the sessions are available on the `slides` folder.
 - [Lab 04 - Create Infra in Azure with Terraform](./labs/lab04.md)
 - [Lab 05 - Import resources](./labs/lab05.md)
 - [Lab 06 - Use Terraform Modules](./labs/lab06.md)
+- [Lab 07 - Use Terraform on Pull Request](./labs/lab07.md)
+- [Lab 08 - Use Terraform on CI/CD](./labs/lab08.md)
 
 ## Feedback
 

@@ -1,4 +1,4 @@
-# Lab 07 - Use Terraform on CI/CD
+# Lab 07 - Use Terraform on Pull Request
 
 ## Table of Contents
 
@@ -246,7 +246,7 @@ Now you can commit and push the changes to your repo:
 ```bash
 git add .github/workflows/pull_request.yml
 git commit -m "Add Pull Request workflow"
-git push origin feature/add-pr-workflow
+git push -u origin feature/add-pr-workflow
 ```
 
 After pushing the changes, you can create a Pull Request on GitHub.
@@ -287,6 +287,8 @@ You can check it on the log of the workflow, you can download the artifact or yo
 The action `Post PR comment` will post a comment on the Pull Request with the output of the Terraform Plan.
 
 This is a good option for you to take a decision about proceed with the merge or not.
+
+Now it's time for you to merge the Pull Request.
 
 ## Conclusion
 
