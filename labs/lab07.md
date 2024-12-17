@@ -237,6 +237,10 @@ jobs:
 
 Please replace `<your_directory>` with the directory where your Terraform code is located and `<your_prefix>` with the prefix you are using on your resources.
 
+Make sure that on your Terraform code you're using the Azure Backend supported by the Storage Account.
+
+Now that you're running the terraform tool on your workflows, you need to use this backend to not lose track of your state file.
+
 Now you can commit and push the changes to your repo:
 
 ```bash
