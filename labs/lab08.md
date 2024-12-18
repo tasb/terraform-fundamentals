@@ -63,7 +63,6 @@ env:
 jobs:
   plan-apply-tst:
     runs-on: ubuntu-latest
-    needs: validate-and-scan
     permissions:
       id-token: write # Require write permission to Fetch an OIDC token.
       contents: read
@@ -125,7 +124,7 @@ jobs:
 
   plan-apply:
     runs-on: ubuntu-latest
-    needs: validate-and-scan
+    needs: destroy-tst
     permissions:
       id-token: write # Require write permission to Fetch an OIDC token.
       contents: read
